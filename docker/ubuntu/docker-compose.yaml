@@ -1,0 +1,15 @@
+services:
+  glim_ros2:
+    image: koide3/glim_ros2:jazzy
+    network_mode: host
+    ipc: host
+    pid: host
+    environment:
+      - DISPLAY
+      - ROS_DOMAIN_ID
+    volumes:
+      - ../../config:/glim/config
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      - ../../data:/glim/data
+      - ../../config/tmux.conf:~/.tmux.conf
+    command: tail -F anything

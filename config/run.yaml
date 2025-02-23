@@ -1,0 +1,18 @@
+session_name: glim_ros
+environment:
+  ROS_DOMAIN_ID: "0"  # Adjust as needed
+  ROS_USE_SIM_TIME: "true"
+shell_command_before:
+  - source ~/ros2_ws/install/setup.bash
+windows:
+  - window_name: glim_ros_workspace
+    layout: tiled
+    panes:
+      - shell_command:
+          - ros2 run glim_ros glim_rosnode --ros-args -p config_path:=/glim/config
+      - shell_command:
+          - ros2 bag play /glim/data/os1_128_01 --clock --rate 0.25 --start-offset 40
+      - shell_command:
+          - rviz2 -d glim_ros2/rviz/glim_ros.rviz
+      - shell_command:
+          - echo "This is an extra pane for commands."
