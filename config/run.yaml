@@ -11,7 +11,7 @@ windows:
       - shell_command:
           - ros2 run glim_ros glim_rosnode --ros-args -p config_path:=/glim/config
       - shell_command:
-          - ros2 bag play /glim/data/os1_128_01 --clock --rate 0.25 --start-offset 40
+          - ros2 bag play /glim/data/ox-stair --clock
       - shell_command:
           - rviz2 -d glim_ros2/rviz/glim_ros.rviz
       - shell_command:

@@ -10,6 +10,6 @@ services:
     volumes:
       - ../../config:/glim/config
       - /tmp/.X11-unix:/tmp/.X11-unix:rw
-      - ../../data:/glim/data
-      - ../../config/tmux.conf:~/.tmux.conf
+      - /home/jobe/bags/ros2:/glim/data
+      - ../../config/tmux.conf:/home/jobe/.tmux.conf
     command: tail -F anything
