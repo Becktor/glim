@@ -11,8 +11,9 @@ windows:
       - shell_command:
           - ros2 run glim_ros glim_rosnode --ros-args -p config_path:=/glim/config
       - shell_command:
+          #- ros2 bag play /glim/data/jsu-short-rm --clock
           - ros2 bag play /glim/data/ox-stair --clock
       - shell_command:
-          - rviz2 -d glim_ros2/rviz/glim_ros.rviz
+          - rviz2 -d /root/ros2_ws/src/glim/config/rviz.rviz
       - shell_command:
           - echo "This is an extra pane for commands."
